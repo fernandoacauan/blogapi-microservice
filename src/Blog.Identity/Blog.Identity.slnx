@@ -6,4 +6,7 @@
     <Project Path="src/Blog.Identity.Persistence/Blog.Identity.Persistence.csproj" />
     <Project Path="src/Blog.Identity.Presentation/Blog.Identity.Presentation.csproj" />
   </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Blog.Identity.Application.Tests/Blog.Identity.Application.Tests.csproj" />
+  </Folder>
 </Solution>

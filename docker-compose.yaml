@@ -1,0 +1,14 @@
+services:
+  IdentityDB:
+    image: postgres:latest
+    container_name: iddb
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: ${DbPassword}
+    ports:
+      - "5432:5432"
+    volumes:
+      - idVolume:/var/lib/postgres/data
+volumes:
+  idVolume:
+    driver: local

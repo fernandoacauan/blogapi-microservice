@@ -15,6 +15,8 @@
     <Folder Include="Contracts/Persistence/Common/" />
     <Folder Include="Contracts/Persistence/Role/" />
     <Folder Include="Contracts/Persistence/User/" />
+    <Folder Include="DTOs/" />
+    <Folder Include="DTOs/Role/" />
     <Folder Include="Exceptions/" />
     <Folder Include="Features/" />
     <Folder Include="Features/Role/" />
@@ -23,6 +25,9 @@
     <Folder Include="Features/Role/Commands/DeleteRoleById/" />
     <Folder Include="Features/Role/Commands/UpdateRoleById/" />
     <Folder Include="Features/Role/Common/" />
+    <Folder Include="Features/Role/Queries/" />
+    <Folder Include="Features/Role/Queries/GetAllRoles/" />
+    <Folder Include="Features/Role/Queries/GetRoleById/" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="14.1.0" />

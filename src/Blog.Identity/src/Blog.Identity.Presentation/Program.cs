@@ -1,5 +1,7 @@
 using Blog.Identity.Application;
+using Blog.Identity.Infrastructure;
 using Blog.Identity.Persistence;
+using Blog.Identity.Presentation.Handlers;
 
 namespace Blog.Identity.Presentation;
 
@@ -9,14 +11,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        builder.Services.AddPersistenceService(builder.Configuration)
-                        .AddApplicationServices();
+        builder.Services.AddPresentationService(builder.Configuration);
 
         var app = builder.Build();
 
@@ -28,7 +23,8 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-
+        app.UseExceptionHandler();
+        app.UseAuthentication();
         app.UseAuthorization();
 
 

@@ -20,6 +20,8 @@
     <Folder Include="Features/Role/" />
     <Folder Include="Features/Role/Commands/" />
     <Folder Include="Features/Role/Commands/CreateRole/" />
+    <Folder Include="Features/Role/Commands/DeleteRoleById/" />
+    <Folder Include="Features/Role/Commands/UpdateRoleById/" />
     <Folder Include="Features/Role/Common/" />
   </ItemGroup>
   <ItemGroup>

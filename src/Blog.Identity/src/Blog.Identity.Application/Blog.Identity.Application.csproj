@@ -1,13 +1,30 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="../Blog.Identity.Domain/Blog.Identity.Domain.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include="Behavior/" />
+    <Folder Include="Behavior/Validator/" />
+    <Folder Include="Contracts/" />
+    <Folder Include="Contracts/Persistence/" />
+    <Folder Include="Contracts/Persistence/Common/" />
+    <Folder Include="Contracts/Persistence/Role/" />
+    <Folder Include="Contracts/Persistence/User/" />
+    <Folder Include="Exceptions/" />
+    <Folder Include="Features/" />
+    <Folder Include="Features/Role/" />
+    <Folder Include="Features/Role/Commands/" />
+    <Folder Include="Features/Role/Commands/CreateRole/" />
+    <Folder Include="Features/Role/Common/" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+  </ItemGroup>
 </Project>

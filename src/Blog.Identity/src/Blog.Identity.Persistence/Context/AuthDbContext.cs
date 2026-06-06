@@ -6,8 +6,8 @@ namespace Blog.Identity.Persistence.Context;
 
 public sealed class AuthDbContext : DbContext
 {
-    public DbSet<UserEntity> User { get; }
-    public DbSet<RoleEntity> Role { get; }
+    public DbSet<UserEntity> User { get; set; }
+    public DbSet<RoleEntity> Role { get; set; }
 
     public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options)
     {

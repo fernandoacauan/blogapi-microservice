@@ -1,3 +1,4 @@
+using Blog.Identity.Domain.Constants.Role;
 using Blog.Identity.Domain.Entities.Role;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -21,5 +22,8 @@ public sealed class RoleEntityConfig : IEntityTypeConfiguration<RoleEntity>
                 .IsRequired();
 
         builder.Ignore(r => r.Events);
+
+        builder.HasData(new RoleEntity(RoleConstant.AdminName, true, new DateTime(1970, 01, 01, 0, 0, 0, DateTimeKind.Utc), new DateTime(1970, 01, 01, 0, 0, 0, DateTimeKind.Utc), RoleConstant.AdminId), 
+                        new RoleEntity(RoleConstant.UserName, false, new DateTime(1970, 01, 01, 0, 0, 0, DateTimeKind.Utc), new DateTime(1970, 01, 01, 0, 0, 0, DateTimeKind.Utc), RoleConstant.UserId));
     }
 }

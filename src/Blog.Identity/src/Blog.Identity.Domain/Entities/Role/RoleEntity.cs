@@ -12,6 +12,12 @@ public sealed class RoleEntity : BaseEntity
         
     }
 
+    public RoleEntity(string name, bool isAdmin, DateTime createdAt, DateTime updatedAt, Guid id) : base(id, createdAt, updatedAt)
+    {
+        Name = name;
+        IsAdmin = isAdmin;
+    }
+
     public RoleEntity(string name, bool isAdmin)
     {
         Name = name;

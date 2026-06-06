@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Blog.Identity.Persistence.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20260606151810_Init")]
+    [Migration("20260606223957_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -51,6 +51,24 @@ namespace Blog.Identity.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Role");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a1111111-1111-1111-1111-111111111111"),
+                            CreatedAt = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsAdmin = true,
+                            Name = "Admin",
+                            UpdatedAt = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("b2222222-2222-2222-2222-222222222222"),
+                            CreatedAt = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsAdmin = false,
+                            Name = "User",
+                            UpdatedAt = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+                        });
                 });
 
             modelBuilder.Entity("Blog.Identity.Domain.Entities.User.UserEntity", b =>

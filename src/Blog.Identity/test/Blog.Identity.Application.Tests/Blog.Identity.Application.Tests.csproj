@@ -30,5 +30,8 @@
     <Folder Include="Features/Role/Commands/CreateRole/" />
     <Folder Include="Features/Role/Commands/DeleteRoleById/" />
     <Folder Include="Features/Role/Commands/UpdateRoleById/" />
+    <Folder Include="Features/User/" />
+    <Folder Include="Features/User/Commands/" />
+    <Folder Include="Features/User/Commands/CreateUser/" />
   </ItemGroup>
 </Project>

@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Blog.Identity.Persistence.Migrations
 {
     /// <inheritdoc />
@@ -48,6 +50,15 @@ namespace Blog.Identity.Persistence.Migrations
                         principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Role",
+                columns: new[] { "Id", "CreatedAt", "IsAdmin", "Name", "UpdatedAt" },
+                values: new object[,]
+                {
+                    { new Guid("a1111111-1111-1111-1111-111111111111"), new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc), true, "Admin", new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc) },
+                    { new Guid("b2222222-2222-2222-2222-222222222222"), new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc), false, "User", new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc) }
                 });
 
             migrationBuilder.CreateIndex(

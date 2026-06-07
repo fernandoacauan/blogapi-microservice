@@ -39,6 +39,8 @@
     <Folder Include="Features/User/Commands/UpdateUser/" />
     <Folder Include="Features/User/Common/" />
     <Folder Include="Features/User/Queries/" />
+    <Folder Include="Features/User/Queries/GetAllUsersQuery/" />
+    <Folder Include="Features/User/Queries/GetUserByIdQuery/" />
     <Folder Include="Features/User/Queries/Login/" />
     <Folder Include="Mapping/" />
     <Folder Include="Mapping/User/" />

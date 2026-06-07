@@ -1,6 +1,8 @@
 using Blog.Identity.Application.Features.User.Commands.CreateUser;
 using Blog.Identity.Application.Features.User.Commands.DeleteUser;
 using Blog.Identity.Application.Features.User.Commands.UpdateUser;
+using Blog.Identity.Application.Features.User.Queries.GetAllUsersQuery;
+using Blog.Identity.Application.Features.User.Queries.GetUserByIdQuery;
 using Blog.Identity.Application.Features.User.Queries.Login;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -18,6 +20,20 @@ namespace Blog.Identity.Presentation.Controllers
         public UserController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetAllUsersAsync(CancellationToken ct = default)
+        {
+            return Ok(await _mediator.Send(new GetAllUsersQuery(), ct));
+        }
+
+        [HttpGet("{id:guid}")]
+        [Authorize]
+        public async Task<IActionResult> GetUserByIdAsync([FromRoute]Guid id, CancellationToken ct = default)
+        {
+            return Ok(await _mediator.Send(new GetUserByIdQuery(id), ct));
         }
 
         [HttpPost]
@@ -40,7 +56,7 @@ namespace Blog.Identity.Presentation.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:guid}")]
         [Authorize]
         public async Task<IActionResult> DeleteUserAsync([FromRoute]Guid id, CancellationToken ct = default)
         {

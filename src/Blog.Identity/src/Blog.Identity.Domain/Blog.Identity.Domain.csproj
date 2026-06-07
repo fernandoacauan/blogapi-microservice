@@ -1,20 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="Constants/" />
-    <Folder Include="Constants/Role/" />
-    <Folder Include="Entities/" />
-    <Folder Include="Entities/Common/" />
-    <Folder Include="Entities/Role/" />
-    <Folder Include="Entities/User/" />
-    <Folder Include="Events/" />
-    <Folder Include="Events/User/" />
+    <Folder Include="Constants/"/>
+    <Folder Include="Constants/Role/"/>
+    <Folder Include="Entities/"/>
+    <Folder Include="Entities/Common/"/>
+    <Folder Include="Entities/Role/"/>
+    <Folder Include="Entities/User/"/>
+    <Folder Include="Events/"/>
+    <Folder Include="Events/User/"/>
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1"/>
+  </ItemGroup>
 </Project>

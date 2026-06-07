@@ -1,8 +1,8 @@
-using System;
+using MediatR;
 
 namespace Blog.Identity.Domain.Entities.Common;
 
-public interface IDomainEvent
+public interface IDomainEvent : INotification
 {
 
 }

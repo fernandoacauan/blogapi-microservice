@@ -30,13 +30,9 @@ public sealed class TokenService : ITokenService
             new Claim(ClaimTypes.NameIdentifier, userLoginDto.Id.ToString()),
             new Claim(ClaimTypes.Name, userLoginDto.Name),
             new Claim(ClaimTypes.Surname, userLoginDto.Surname),
-            new Claim(ClaimTypes.Email, userLoginDto.Email)
+            new Claim(ClaimTypes.Email, userLoginDto.Email),
+            new Claim("Admin", userLoginDto.IsAdmin ? "true" : "false")
         };
-
-        if (userLoginDto.IsAdmin)
-        {
-            claims.Add(new("Admin", "true"));
-        }
 
         var token = new SecurityTokenDescriptor()
         {

@@ -9,11 +9,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstractions/" />
+    <Folder Include="Abstractions/Event/" />
     <Folder Include="Abstractions/Password/" />
     <Folder Include="Abstractions/Token/" />
+    <Folder Include="Abstractions/TokenInfo/" />
     <Folder Include="Behavior/" />
     <Folder Include="Behavior/Validator/" />
     <Folder Include="Contracts/" />
+    <Folder Include="Contracts/Events/" />
+    <Folder Include="Contracts/Events/User/" />
     <Folder Include="Contracts/Persistence/" />
     <Folder Include="Contracts/Persistence/Common/" />
     <Folder Include="Contracts/Persistence/Role/" />
@@ -22,7 +26,6 @@
     <Folder Include="DTOs/Role/" />
     <Folder Include="DTOs/User/" />
     <Folder Include="Exceptions/" />
-    <Folder Include="Features/" />
     <Folder Include="Features/Role/" />
     <Folder Include="Features/Role/Commands/" />
     <Folder Include="Features/Role/Commands/CreateRole/" />
@@ -32,9 +35,8 @@
     <Folder Include="Features/Role/Queries/" />
     <Folder Include="Features/Role/Queries/GetAllRoles/" />
     <Folder Include="Features/Role/Queries/GetRoleById/" />
-    <Folder Include="Features/User/" />
-    <Folder Include="Features/User/Commands/" />
     <Folder Include="Features/User/Commands/CreateUser/" />
+    <Folder Include="Features/User/Commands/UpdateUser/" />
     <Folder Include="Features/User/Common/" />
     <Folder Include="Features/User/Queries/" />
     <Folder Include="Features/User/Queries/Login/" />

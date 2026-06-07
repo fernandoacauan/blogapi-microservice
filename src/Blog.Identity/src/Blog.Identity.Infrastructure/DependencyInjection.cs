@@ -1,8 +1,12 @@
+using Blog.Identity.Application.Abstractions.Event;
 using Blog.Identity.Application.Abstractions.Password;
 using Blog.Identity.Application.Abstractions.Token;
+using Blog.Identity.Application.Abstractions.TokenInfo;
 using Blog.Identity.Infrastructure.Configurations.Jwt;
+using Blog.Identity.Infrastructure.Implementations.Event;
 using Blog.Identity.Infrastructure.Implementations.Password;
 using Blog.Identity.Infrastructure.Implementations.Token;
+using Blog.Identity.Infrastructure.Implementations.TokenInfo;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,8 +19,11 @@ public static class DependencyInjection
         services.Configure<JwtSettings>(config.GetSection("JwtSettings"));
         services.AddJwtService(config);
 
+        services.AddHttpContextAccessor();
         services.AddScoped<IPasswordService, PasswordService>();
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IEventPublisher, EventPublisher>();
+        services.AddScoped<ITokenInformation, TokenInformation>();
         return services;
     }
 }

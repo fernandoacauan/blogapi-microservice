@@ -1,5 +1,6 @@
 using System.Reflection;
 using Blog.Identity.Application.Behavior.Validator;
+using Blog.Identity.Application.Mapping.User;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,6 +17,10 @@ public static class DependecyInjection
         {
             cfg.AddOpenBehavior(typeof(ValidatorBehavior<,>));
             cfg.RegisterServicesFromAssembly(asm);
+        });
+        services.AddAutoMapper(cfg =>
+        {
+            cfg.AddProfile<UserProfile>();
         });
         return services;
     }

@@ -12,7 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Implementations/" />
+    <Folder Include="Implementations/Event/" />
     <Folder Include="Implementations/Password/" />
     <Folder Include="Implementations/Token/" />
+    <Folder Include="Implementations/TokenInfo/" />
   </ItemGroup>
 </Project>

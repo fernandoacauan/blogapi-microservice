@@ -12,6 +12,7 @@ public sealed class UserEntity : BaseEntity
     public string HashedPassword { get; private set; } = string.Empty;
     public Guid RoleId { get; private set; }
     public RoleEntity Role { get; private set; } = default!;
+    public void SetHashedPassword(string hashedPassword) => HashedPassword = hashedPassword;
 
     public UserEntity(string name, string surname, string email, string hashedPassword, Guid roleId)
     {

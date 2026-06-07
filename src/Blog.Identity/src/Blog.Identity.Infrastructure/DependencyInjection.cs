@@ -1,6 +1,8 @@
 using Blog.Identity.Application.Abstractions.Password;
+using Blog.Identity.Application.Abstractions.Token;
 using Blog.Identity.Infrastructure.Configurations.Jwt;
 using Blog.Identity.Infrastructure.Implementations.Password;
+using Blog.Identity.Infrastructure.Implementations.Token;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +16,7 @@ public static class DependencyInjection
         services.AddJwtService(config);
 
         services.AddScoped<IPasswordService, PasswordService>();
+        services.AddScoped<ITokenService, TokenService>();
         return services;
     }
 }

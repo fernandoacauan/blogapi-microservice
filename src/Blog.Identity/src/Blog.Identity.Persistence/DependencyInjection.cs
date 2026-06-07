@@ -1,10 +1,12 @@
 using System.Data;
 using Blog.Identity.Application.Contracts.Persistence.Common;
 using Blog.Identity.Application.Contracts.Persistence.Role;
+using Blog.Identity.Application.Contracts.Persistence.User;
 using Blog.Identity.Persistence.Configurations.DbSettings;
 using Blog.Identity.Persistence.Context;
 using Blog.Identity.Persistence.Repository.Common;
 using Blog.Identity.Persistence.Repository.Role;
+using Blog.Identity.Persistence.Repository.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +33,7 @@ public static class DependencyInjection
     
         services.AddScoped<IDbConnection>(provider => provider.GetRequiredService<AuthDbContext>().Database.GetDbConnection());
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IUserQuery, UserQuery>();
         services.AddScoped<IRoleQuery, RoleQuery>();
         return services;
     }

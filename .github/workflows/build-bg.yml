@@ -1,0 +1,36 @@
+name: Build-Bg
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "src/Blog.Solution/**"
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "src/Blog.Solution/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+          cache: true
+          cache-dependency: 'src/Blog.Solution/**/*.csproj'
+
+      - name: Restore
+        run: dotnet restore "src/Blog.Solution/Blog.Solution.slnx"
+
+      - name: Build
+        run: dotnet build "src/Blog.Solution/Blog.Solution.slnx" --no-restore -c Release
+
+      - name: Tests
+        run: dotnet tests "src/Blog.Solution/Blog.Solution.slnx" --no-build --no-restore -c Release

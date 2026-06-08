@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.79" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Blog.Solution.Application/Blog.Solution.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configurations/" />
+    <Folder Include="Configurations/Author/" />
+    <Folder Include="Configurations/Comment/" />
+    <Folder Include="Configurations/DbSettings/" />
+    <Folder Include="Configurations/Post/" />
+    <Folder Include="Context/" />
+    <Folder Include="Context/BlogDbContext/" />
+    <Folder Include="Repositories/" />
+    <Folder Include="Repositories/Author/" />
+    <Folder Include="Repositories/Common/" />
+  </ItemGroup>
+</Project>

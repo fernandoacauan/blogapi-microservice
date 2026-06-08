@@ -24,10 +24,10 @@ jobs:
         with:
           dotnet-version: '8.0.x'
           cache: true
-          cache-dependency-path: 'src/Blog.Identity/src/**/*.csproj
+          cache-dependency-path: 'src/Blog.Identity/src/**/*.csproj'
 
       - name: restore
-        run: dotnet-restore "src/Blog.Identity/Blog.Identity.slnx"
+        run: dotnet restore "src/Blog.Identity/Blog.Identity.slnx"
 
       - name: build
         run: dotnet build "src/Blog.Identity/Blog.Identity.slnx" --no-restore -c Release

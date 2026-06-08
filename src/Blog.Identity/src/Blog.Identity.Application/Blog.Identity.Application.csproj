@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="../../../Blog.SharedKernel/Blog.SharedKernel.csproj" />
     <ProjectReference Include="../Blog.Identity.Domain/Blog.Identity.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -18,6 +19,8 @@
     <Folder Include="Contracts/" />
     <Folder Include="Contracts/Events/" />
     <Folder Include="Contracts/Events/User/" />
+    <Folder Include="Contracts/Infrastructure/" />
+    <Folder Include="Contracts/Infrastructure/Publisher/" />
     <Folder Include="Contracts/Persistence/" />
     <Folder Include="Contracts/Persistence/Common/" />
     <Folder Include="Contracts/Persistence/Role/" />

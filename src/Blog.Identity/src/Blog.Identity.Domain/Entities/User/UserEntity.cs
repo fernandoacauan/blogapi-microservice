@@ -27,7 +27,7 @@ public sealed class UserEntity : BaseEntity
         HashedPassword = hashedPassword;
         RoleId = roleId;
 
-        AddEvent(new UserCreatedEvent(Name, Email));
+        AddEvent(new UserCreatedEvent(Id, Name, Surname, Email));
     }
 
     private UserEntity()

@@ -9,4 +9,5 @@
   <Folder Name="/test/">
     <Project Path="test/Blog.Identity.Application.Tests/Blog.Identity.Application.Tests.csproj" />
   </Folder>
+  <Project Path="../Blog.SharedKernel/Blog.SharedKernel.csproj" />
 </Solution>

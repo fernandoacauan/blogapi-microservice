@@ -9,6 +9,18 @@ services:
       - "5432:5432"
     volumes:
       - idVolume:/var/lib/postgres/data
+  RabbitMQ:
+    image: rabbitmq:4.0-management
+    container_name: rabbit
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RabbitMq__User}
+      RABBITMQ_PASS: ${RabbitMq__Pass}
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - rabbitVolume:/var/lib/rabbitmq
 volumes:
   idVolume:
+  rabbitVolume:
     driver: local

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Blog.Identity.Application/Blog.Identity.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="MassTransit" Version="8.2.5" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementations/" />
+    <Folder Include="Implementations/Event/" />
+    <Folder Include="Implementations/Password/" />
+    <Folder Include="Implementations/Publisher/" />
+    <Folder Include="Implementations/Token/" />
+    <Folder Include="Implementations/TokenInfo/" />
+  </ItemGroup>
+</Project>

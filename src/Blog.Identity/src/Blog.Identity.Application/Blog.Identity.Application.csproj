@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../Blog.SharedKernel/Blog.SharedKernel.csproj" />
+    <ProjectReference Include="../Blog.Identity.Domain/Blog.Identity.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstractions/" />
+    <Folder Include="Abstractions/Event/" />
+    <Folder Include="Abstractions/Password/" />
+    <Folder Include="Abstractions/Token/" />
+    <Folder Include="Abstractions/TokenInfo/" />
+    <Folder Include="Behavior/" />
+    <Folder Include="Behavior/Validator/" />
+    <Folder Include="Contracts/" />
+    <Folder Include="Contracts/Events/" />
+    <Folder Include="Contracts/Events/User/" />
+    <Folder Include="Contracts/Infrastructure/" />
+    <Folder Include="Contracts/Infrastructure/Publisher/" />
+    <Folder Include="Contracts/Persistence/" />
+    <Folder Include="Contracts/Persistence/Common/" />
+    <Folder Include="Contracts/Persistence/Role/" />
+    <Folder Include="Contracts/Persistence/User/" />
+    <Folder Include="DTOs/" />
+    <Folder Include="DTOs/Role/" />
+    <Folder Include="DTOs/User/" />
+    <Folder Include="Exceptions/" />
+    <Folder Include="Features/Role/" />
+    <Folder Include="Features/Role/Commands/" />
+    <Folder Include="Features/Role/Commands/CreateRole/" />
+    <Folder Include="Features/Role/Commands/DeleteRoleById/" />
+    <Folder Include="Features/Role/Commands/UpdateRoleById/" />
+    <Folder Include="Features/Role/Common/" />
+    <Folder Include="Features/Role/Queries/" />
+    <Folder Include="Features/Role/Queries/GetAllRoles/" />
+    <Folder Include="Features/Role/Queries/GetRoleById/" />
+    <Folder Include="Features/User/Commands/CreateUser/" />
+    <Folder Include="Features/User/Commands/UpdateUser/" />
+    <Folder Include="Features/User/Common/" />
+    <Folder Include="Features/User/Queries/" />
+    <Folder Include="Features/User/Queries/GetAllUsersQuery/" />
+    <Folder Include="Features/User/Queries/GetUserByIdQuery/" />
+    <Folder Include="Features/User/Queries/Login/" />
+    <Folder Include="Mapping/" />
+    <Folder Include="Mapping/User/" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="5.0.0-prerelease.gf86f9271e6" />
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+  </ItemGroup>
+</Project>

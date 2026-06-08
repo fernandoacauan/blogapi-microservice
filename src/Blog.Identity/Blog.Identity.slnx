@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Blog.Identity.Application/Blog.Identity.Application.csproj" />
+    <Project Path="src/Blog.Identity.Domain/Blog.Identity.Domain.csproj" />
+    <Project Path="src/Blog.Identity.Infrastructure/Blog.Identity.Infrastructure.csproj" />
+    <Project Path="src/Blog.Identity.Persistence/Blog.Identity.Persistence.csproj" />
+    <Project Path="src/Blog.Identity.Presentation/Blog.Identity.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Blog.Identity.Application.Tests/Blog.Identity.Application.Tests.csproj" />
+  </Folder>
+  <Project Path="../Blog.SharedKernel/Blog.SharedKernel.csproj" />
+</Solution>

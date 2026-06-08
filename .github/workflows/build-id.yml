@@ -1,0 +1,36 @@
+name: Build-ID
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "src/Blog.Identity/**"
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "src/Blog.Identity/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup dotnet 8.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+          cache: true
+          cache-dependency-path: 'src/Blog.Identity/src/**/*.csproj'
+
+      - name: restore
+        run: dotnet restore "src/Blog.Identity/Blog.Identity.slnx"
+
+      - name: build
+        run: dotnet build "src/Blog.Identity/Blog.Identity.slnx" --no-restore -c Release
+
+      - name: tests
+        run: dotnet test "src/Blog.Identity/Blog.Identity.slnx" --no-restore --no-build -c Release
